@@ -131,14 +131,25 @@ Sub AllStocksAnalysisRefactored()
  
     endTime = Timer
     MsgBox "This code ran in " & (endTime - startTime) & " seconds for the year " & (yearValue)
-
+    
 End Sub
 
 
 ### Comparing Execution Times of Original Script adn Refactored Script 
 The execution of the original code for both years completed in about .75 seconds. 
+![stocks_analysis_2017](https://user-images.githubusercontent.com/87085239/165675192-db41678e-6e59-40f2-a0a0-4bff2cda41bc.png)
+
+![stocks_analysis_2018](https://user-images.githubusercontent.com/87085239/165675215-0153b6d0-17a2-4eba-ac36-744faf418ffc.png)
+
+
 
 After the refactoring of the code, there was a noticable difference in the execution time dropping down to .11 seconds.
+
+![VBA_Cahllenge_2017](https://user-images.githubusercontent.com/87085239/165675130-a07e80c1-2b9c-4a47-9a24-12d1dba9de40.png)
+
+![VBA_Cahllenge_2018](https://user-images.githubusercontent.com/87085239/165675152-97302973-b04a-471e-ba51-a78f5839e699.png)
+
+
 
 
 ## Summary Statement
