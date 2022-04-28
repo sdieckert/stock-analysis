@@ -3,12 +3,12 @@
 ## Overview of Project
 
 ### Purpose 
-The original All Stocks Analysis project was developed for the end-user to push a control button and be able to quickly analyze a single tab of stock data grouped by the stock year. The performance of the All Stocks Analysis VBA code was good but it needs to be taken into consideration that the analysis was for only 12 stocks and two years. There's concern that the code will not scale well with thousands of stocks over multiple years. Therefore, there's a need to refactor the All Stocks Analysis code so that it will loop through all the data one time in order to collect the same information we did in the original VBA code and improve the efficency and execution time. 
+The original All Stocks Analysis project was developed for the end-user to push a control button and be able to quickly analyze a single tab of stock data grouped by the stock year. The performance of the All Stocks Analysis VBA code was good but it needs to be taken into consideration that the analysis was for only 12 stocks and two years. There's concern that the code will not scale well with thousands of stocks over multiple years. Therefore, there's a need to refactor the All Stocks Analysis code so that it will loop through all the data one time in order to collect the same information we did in the original VBA code and improve the efficiency and execution time. 
 
 ## Results
 
 ### Refactoring The Code
-The original AllStocksAnalysis() uses a nested For loop to move through the ticker array one stock at a time where it captures the needed information of totalVolume, endingPrice and startingPrice and outputs the information onto the excel All Stocks Anlaysis sheet. It thens moves on to the next stock ticker in the array and repeats the process. 
+The original AllStocksAnalysis() uses a nested For loop to move through the ticker array one stock at a time where it captures the needed information of totalVolume, endingPrice and startingPrice and outputs the information onto the excel All Stocks Analysis sheet. It then moves on to the next stock ticker in the array and repeats the process. 
 
 Rather than loop through the data one stock and output to the sheet, the refactored code instead loops through capturing the needed information of totalVolume, endingPrice and startingPrice and once all the data is stored for all stocks it then uses a loop to output the information onto the spreadsheet.
 
@@ -17,9 +17,7 @@ Rather than loop through the data one stock and output to the sheet, the refacto
 Sub AllStocksAnalysisRefactored()
     Dim startTime As Single
     Dim endTime  As Single
-
     yearValue = InputBox("What year would you like to run the analysis on?")
-
     startTime = Timer
     
     'Format the output sheet on All Stocks Analysis worksheet
@@ -62,7 +60,7 @@ Sub AllStocksAnalysisRefactored()
     Dim tickerStartingPrices(12) As Single
     Dim tickerEndingPrices(12) As Single
     
-    ''2a) Create a for loop to initialize the tickerVolumes to zero.
+    '2a) Create a for loop to initialize the tickerVolumes to zero.
     
     For i = 0 To 11
     
@@ -73,7 +71,7 @@ Sub AllStocksAnalysisRefactored()
     Next i
     
         
-    ''2b) Loop over all the rows in the spreadsheet.
+    '2b) Loop over all the rows in the spreadsheet.
     For i = 2 To RowCount
     
         '3a) Increase volume for current ticker
@@ -124,12 +122,9 @@ Sub AllStocksAnalysisRefactored()
     For i = dataRowStart To dataRowEnd
         
         If Cells(i, 3) > 0 Then
-            Cells(i, 3).Interior.Color = vbGreen
-            
-        Else
-        
-            Cells(i, 3).Interior.Color = vbRed
-            
+            Cells(i, 3).Interior.Color = vbGreen            
+        Else        
+            Cells(i, 3).Interior.Color = vbRed            
         End If
         
     Next i
@@ -139,35 +134,18 @@ Sub AllStocksAnalysisRefactored()
 
 End Sub
 
-
-
-
-
-
-### Comparing Execution Times of Original Script adn Refactored Script 
+### Comparing Execution Times of Original Script and Refactored Script 
 The execution of the original code for both years completed in about .75 seconds. 
-![stocks_analysis_2017](https://user-images.githubusercontent.com/87085239/165675192-db41678e-6e59-40f2-a0a0-4bff2cda41bc.png)
 
-![stocks_analysis_2018](https://user-images.githubusercontent.com/87085239/165675215-0153b6d0-17a2-4eba-ac36-744faf418ffc.png)
-
-
-
-After the refactoring of the code, there was a noticable difference in the execution time dropping down to .11 seconds.
-
-![VBA_Cahllenge_2017](https://user-images.githubusercontent.com/87085239/165675130-a07e80c1-2b9c-4a47-9a24-12d1dba9de40.png)
-
-![VBA_Cahllenge_2018](https://user-images.githubusercontent.com/87085239/165675152-97302973-b04a-471e-ba51-a78f5839e699.png)
-
-
-
+After the refactoring of the code, there was a noticeable difference in the execution time dropping down to .11 seconds.
 
 ## Summary Statement
 
 What are the advantages or disadvantages of refactoring code?
 How do these pros and cons apply to refactoring the original VBA script?
 
-Refactoring is a key part of the coding process. The first version of a coding project might not always be the most efficient. Refactoring provides an opprotunity to clean up the code, reduce steps, improve the logic, use less memory and add documentation for future users to read. 
+Refactoring is a key part of the coding process. The first version of a coding project might not always be the most efficient. Refactoring provides an opportunity to clean up the code, reduce steps, improve the logic, use less memory and add documentation for future users to read. 
 
 Refactoring can be difficult if your refactoring someone else's code and they didn't provide adequate documentation. It can be difficult understanding their logic if the code doesn't follow good programming logic and they provided enough commentary. 
 
-For the purpose of this challenge, it was good to see that there was more than one way to work with loops and how the structure of loops can have an effect on overall performance and execution time. Also, writing out the steps as part of the documentation proved to be very helpful at refreshing my memory when I came back to the code several days later to write up my summary. 
+For the purpose of this challenge, it was good to see that there was more than one way to work with loops and how the structure of loops can influence overall performance and execution time. Also, writing out the steps as part of the documentation proved to be very helpful at refreshing my memory when I came back to the code several days later to write up my summary. 
