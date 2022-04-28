@@ -14,12 +14,14 @@ Rather than loop through the data one stock and output to the sheet, the refacto
 
 **Below is the refactored code:**
 
-
 'Module 3 VBA Challenge
-Sub AllStocksAnalysisRefactored()
+
+    Sub AllStocksAnalysisRefactored()
     Dim startTime As Single
     Dim endTime  As Single
+
     yearValue = InputBox("What year would you like to run the analysis on?")
+
     startTime = Timer
     
     'Format the output sheet on All Stocks Analysis worksheet
@@ -62,7 +64,7 @@ Sub AllStocksAnalysisRefactored()
     Dim tickerStartingPrices(12) As Single
     Dim tickerEndingPrices(12) As Single
     
-    '2a) Create a for loop to initialize the tickerVolumes to zero.
+    ''2a) Create a for loop to initialize the tickerVolumes to zero.
     
     For i = 0 To 11
     
@@ -73,7 +75,7 @@ Sub AllStocksAnalysisRefactored()
     Next i
     
         
-    '2b) Loop over all the rows in the spreadsheet.
+    ''2b) Loop over all the rows in the spreadsheet.
     For i = 2 To RowCount
     
         '3a) Increase volume for current ticker
@@ -124,9 +126,12 @@ Sub AllStocksAnalysisRefactored()
     For i = dataRowStart To dataRowEnd
         
         If Cells(i, 3) > 0 Then
-            Cells(i, 3).Interior.Color = vbGreen            
-        Else        
-            Cells(i, 3).Interior.Color = vbRed            
+            Cells(i, 3).Interior.Color = vbGreen
+            
+        Else
+        
+            Cells(i, 3).Interior.Color = vbRed
+            
         End If
         
     Next i
@@ -134,8 +139,10 @@ Sub AllStocksAnalysisRefactored()
     endTime = Timer
     MsgBox "This code ran in " & (endTime - startTime) & " seconds for the year " & (yearValue)
 
-End Sub
-'End of Script
+    End Sub
+
+
+
 
 ### Comparing Execution Times of Original Script and Refactored Script 
 The execution of the original code for both years completed in about .75 seconds. 
