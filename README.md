@@ -14,6 +14,8 @@ Rather than loop through the data one stock and output to the sheet, the refacto
 
 **Below is the refactored code:**
 
+
+'Module 3 VBA Challenge
 Sub AllStocksAnalysisRefactored()
     Dim startTime As Single
     Dim endTime  As Single
@@ -133,6 +135,7 @@ Sub AllStocksAnalysisRefactored()
     MsgBox "This code ran in " & (endTime - startTime) & " seconds for the year " & (yearValue)
 
 End Sub
+'End of Script
 
 ### Comparing Execution Times of Original Script and Refactored Script 
 The execution of the original code for both years completed in about .75 seconds. 
