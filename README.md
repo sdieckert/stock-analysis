@@ -62,7 +62,7 @@ Rather than loop through the data one stock and output to the sheet, the refacto
     Dim tickerStartingPrices(12) As Single
     Dim tickerEndingPrices(12) As Single
     
-    ''2a) Create a for loop to initialize the tickerVolumes to zero.
+    '2a) Create a for loop to initialize the tickerVolumes to zero.
     
     For i = 0 To 11
     
@@ -73,7 +73,7 @@ Rather than loop through the data one stock and output to the sheet, the refacto
     Next i
     
         
-    ''2b) Loop over all the rows in the spreadsheet.
+    '2b) Loop over all the rows in the spreadsheet.
     For i = 2 To RowCount
     
         '3a) Increase volume for current ticker
