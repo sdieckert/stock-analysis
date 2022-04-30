@@ -169,6 +169,6 @@ Refactoring can be difficult if your refactoring someone else's code and they di
 ### How do these pros and cons apply to refactoring the original VBA script?
 For the purpose of this challenge, it was good to see that there was more than one way to work with loops and how the structure of loops can influence overall performance and execution time. 
 
-The original VBA code was easy to follow with looping through each ticker using ticker(i) and then outputing the data before moving to the next ticker but it was lengthy and the disadvantage was increase processing time. 
+The original VBA code was easy to follow with looping through each ticker using ticker(i) and then outputing the data before moving to the next ticker but it was lengthy and the disadvantage was increased processing time. 
 
 The pros of the refactored code was improved execution time but unless you were timing the process, there wouldn't appear to be a difference in the improved time to the user. 
